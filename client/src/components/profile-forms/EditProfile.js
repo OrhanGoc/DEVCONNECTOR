@@ -30,7 +30,7 @@ const EditProfile = ({
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   useEffect(() => {
-    getCurrentProfile();
+    // getCurrentProfile();
 
     // fills the profile with current values
     setFormData({
