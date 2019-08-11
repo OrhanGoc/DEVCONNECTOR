@@ -24,7 +24,9 @@ const EditProfile = ({
     youtube: '',
     instagram: '',
   });
-
+  if (!profile) {
+    profile = {};
+  }
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   useEffect(() => {
@@ -45,18 +47,7 @@ const EditProfile = ({
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       instagram: loading || !profile.social ? '' : profile.social.instagram,
     });
-  }, [
-    loading,
-    getCurrentProfile,
-    profile.company,
-    profile.website,
-    profile.location,
-    profile.status,
-    profile.skills,
-    profile.githubusername,
-    profile.bio,
-    profile.social,
-  ]);
+  }, [loading, getCurrentProfile, profile]);
 
   const {
     company,
